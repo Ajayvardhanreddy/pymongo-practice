@@ -6,8 +6,8 @@ import os
 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'learnpymongo'
-# app.config['MONGO_URI'] = "mongodb+srv://ajayvardhanreddy:ajayvardhan@learnmongo.dba5m.mongodb.net/learnpymongo?retryWrites=true&w=majority"
-app.config['MONGO_URI'] =os.environ["DATABASE_URI"]
+# app.config['MONGO_URI'] = "mongodb+srv://ajayvardhanreddy:<password>@learnmongo.dba5m.mongodb.net/<database>?retryWrites=true&w=majority"
+app.config['MONGO_URI'] = os.environ["DATABASE_URI"]
 
 mongo = PyMongo(app)
 
@@ -21,7 +21,7 @@ def home():
 
 @app.route('/insert')
 def insert():
-    users.insert_one({'name':'Dhoni', 'age':40, 'location':'Hyd'})
+    users.insert_one({'name':'Rithu', 'age':21, 'location':'Hyd'})
     return 'Done'
 
 
