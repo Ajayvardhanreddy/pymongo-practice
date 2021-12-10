@@ -1,11 +1,12 @@
 from flask import Flask, request, render_template, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+import os
 
 
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'learnpymongo'
-app.config['MONGO_URI'] = "mongodb+srv://ajayvardhanreddy:ajayvardhan@learnmongo.dba5m.mongodb.net/learnpymongo?retryWrites=true&w=majority"
+app.config['MONGO_URI'] = os.environ.get('MONGO_URI')
 
 mongo = PyMongo(app)
 
