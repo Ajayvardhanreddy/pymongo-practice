@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 app.config['MONGO_DBNAME'] = 'learnpymongo'
 # app.config['MONGO_URI'] = "mongodb+srv://ajayvardhanreddy:ajayvardhan@learnmongo.dba5m.mongodb.net/learnpymongo?retryWrites=true&w=majority"
-app.config['MONGO_URI'] =os.environ.get("DATABASE_URL")
+app.config['MONGO_URI'] =os.environ["DATABASE_URL"]
 
 mongo = PyMongo(app)
 
